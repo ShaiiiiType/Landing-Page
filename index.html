@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Landing Project</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family:'Roboto', sans-serif;
+        }
+
+        
+
+        .header {
+            padding: 0 300px 0 300px;
+            width: 100%;
+            height: 600px;
+            background-color: #1f2937;
+            
+            color: #F9FAF8;
+            overflow: hidden;
+            
+        }
+
+        .header .tab {
+            width: 100%;
+            height: auto;
+            padding-top: 30px;
+            height: 10%;
+        
+            display: flex;
+            
+        }
+        .header .tab h1 {
+            font-size: 24px;
+            
+        }
+
+        .header .tab div {
+            border-color: aliceblue;
+            width: 30%;
+            color: #F9FAF8;
+            display: flex;
+            
+            justify-content: space-between;
+            flex: 1;
+
+        }
+
+        .links{
+            transition: 0.3s ease;
+        }
+
+        .links:hover{
+            color: #3882F6;
+            transform: translateY(-10px);
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .links::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 0.175rem;
+            transform: scale(0,1);
+            transform-origin: 0% 100%;
+            background:  #3882F6;
+            transition: transform 0.3s ease;
+        }
+
+
+        .links:hover::after {
+            transform: scale(1, 1);
+            transform-origin: 0% 100%;
+            transition: transform 0.3s ease;
+            box-shadow: 2px 2px 5px black;
+        }
+
+        .header button{
+            background-color: #3882F6;
+            border: 0;
+            font-size: 18px;
+            color: #F9FAF8;
+            padding: 7px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-family:'Roboto', sans-serif;
+            transition: 0.3s ease;
+        }
+
+ 
+
+        .header button:hover {
+            opacity: 0.6;
+            transform: translateY(-5%);
+        }
+        .header .tab div a{
+            font-size: 18px;
+            color: #E5E7EB;
+        }
+
+
+
+
+        .header .below{
+            width: 100%;
+
+            
+            display: flex;
+            gap: 50px;
+            justify-content: space-between;
+
+        }
+
+        .header .below .container {
+
+            
+            padding-top: 100px;
+            height: 100%;
+            width: 50%;
+            
+        }
+
+        .header .below .container h1 {
+            font-size: 48px;
+            font-weight: 900;
+            color: #F9FAF8;
+        }
+
+        .header .below .container .cute {
+            padding-bottom: 15px;
+        }
+
+        .header .below .container p {
+            font-size: 18px;
+            font-weight: 100;
+            color: #cbccd0;
+        }
+
+        .header .below .container img{
+            border-width: 3px;
+            align-content: end;
+            object-fit: cover;
+            width: 100%;
+            height: 300px;
+            
+        }
+
+        .second{
+            
+            width: 100%;
+            height: auto;
+        }
+
+        .second .title{
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+            color: #1f2937;
+            font-weight: 1000;
+        }
+
+        .second .sec-container{
+            height: 200px;
+            padding: 230px;
+            padding-bottom: 300px;
+            gap: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .second .sec-container .item{
+            width: 200px;
+            height: 300px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .second .sec-container .item img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            font-size: 18px;
+            filter: opacity(0.3) drop-shadow(0 0 black);
+            transition: 0.3s ease;
+        }
+
+        .second .sec-container .item img:hover{
+            border-radius: unset;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            filter: opacity(1) drop-shadow(0 0 black);
+            
+        }
+
+        .second .sec-container .item p{
+            color: #424242;
+            padding: 15px;
+        }
+
+        .second .sec-container .item:hover{
+            box-shadow: 2px 2px 10px #222;
+            transform: translateY(-10%);
+        }
+
+        .quote {
+            width:100%;
+            height: 600px;
+            background-color: #E5E7EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quote .inner{
+            width: 800px;
+            height:200px;
+            color: #1f2937;
+        }
+
+        .quote .inner h1{
+            font-size: 36px;
+            font-style: italic;
+            font-weight: 100;
+
+        }
+
+        .quote .inner p{
+            padding-top: 30px;
+            font-size: 25px;
+            font-weight: 900;
+            text-align: right;
+
+        }
+
+        .last {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .last .container{
+            width: 1000px;
+            height: 170px;
+            background-color: #3882F6;
+            border-radius: 10px;
+            padding: 0 100px;
+            display: flex;
+            align-items: center;
+            justify-content:space-around;
+        }
+        .last .container .Texts{
+            width: 70%;
+            height: 50px;
+            margin: 40px;
+            align-items: center;
+            color: #F9FAF8;
+            font-size: 16px;
+        }
+
+        .last .container .Texts p{
+            padding-top: 3px;
+            color: #E5E7EB;
+            font-size: 16px;
+        }
+
+        .last .container button{
+            background-color: #3882F6;
+            border: 0;
+            font-size: 18px;
+            color: #F9FAF8;
+            padding: 7px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-family:'Roboto', sans-serif;
+            transition: 0.3s ease;
+            border-color: #F9FAF8;
+            border-style: solid;
+            border-width: 2px;
+            
+        }
+
+        .copyright {
+            width: 100%;
+            height: 70px;
+            background-color: #1f2937;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #F9FAF8;
+            font-size: 18px;
+        }
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="tab">
+            <div>
+                <h1>Header logo</h1>
+            </div>
+            <div>
+                <a class="links">Header link 1</a>
+                <a class="links">Header link 2</a>
+                <a class="links">Header link 3</a>
+            </div>
+        </div>
+        <div class="below">
+            <div class="container">
+                <h1 class="cute">This website is awesome</h1>
+                <p class="cute">This website has some subtext that goes here under the main title. It's a smaller font and the color is <br>lower contrast</p>
+                <button>Sign up</button>
+            </div>
+            <div class="container">
+                <img src="https://img.freepik.com/free-photo/adorable-kitty-with-monochrome-wall-her_23-2148955142.jpg?t=st=1737189807~exp=1737193407~hmac=134a69c877f97b32b04901d6e2aea0dabc2dde720cedec9a1f427ed0e3968412&w=740" alt="Flowers in Chania">
+            </div>
+        </div>
+    </div>
+    <div class="second">
+        <h1 class="title">Some random information.</h1>
+        <div class="sec-container">
+            <div class="item">
+                <img src="https://img.freepik.com/free-photo/adorable-kitty-looking-like-it-want-hunt_23-2149167099.jpg?t=st=1737188896~exp=1737192496~hmac=5d4131599af1bf0784eaf9d917b8ab64035535034be9bb25a0300e43d08092d3&w=996">
+                <p style="text-align: center">This is some subtext under an illustration <br> or image</p>
+            </div>
+            <div class="item">
+                <img src="https://img.freepik.com/free-photo/kitty-with-monochrome-wall-her_23-2148955134.jpg?t=st=1737189349~exp=1737192949~hmac=5282f0d2ae47f7c0aade1582b0bda85f1afdd269ea3a4279c7c84dc372e4a544&w=360">
+                <p style="text-align: center">This is some subtext under an illustration <br> or image</p>
+            </div>
+
+            <div class="item">
+                <img src="https://img.freepik.com/free-photo/adorable-kittens-with-fuzzy-hair-sitting-white-surface-with-two-guinea-pigs_181624-43705.jpg?t=st=1737189398~exp=1737192998~hmac=8d53868fd6e342c0064587171cdb3d69e7967aea3b25d38e3fc7b059eda51436&w=996">
+                <p style="text-align: center">This is some subtext under an illustration <br> or image</p>
+            </div>
+            <div class="item">
+                <img src="https://img.freepik.com/free-photo/kitty-cats-pillow_1150-18085.jpg?t=st=1737189456~exp=1737193056~hmac=0230cb3045ba294d20f3caebe209f275d400c55bb7146e30b926724acd18853d&w=1060">
+                <p style="text-align: center">This is some subtext under an illustration <br> or image</p>
+            </div>
+        </div>
+    </div>
+    <div class="quote">
+        <div class="inner">
+            <h1>This is an inspiring quote, or a testimonial from a customer. Maybe it's just filling up space, or maybe people will actually read it. All I know is that it looks nice.</h1>
+            <p>-Thor, god of Thunder</p>
+        </div>
+    </div>
+    <div class="last">
+        <div class="container">
+            <div class="Texts">
+                <h1>Call to action! it's time!</h1>
+                <p>Sign up for our product by clicking that button right over there!</p>
+            </div>
+            <button>Sign up</button>
+
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Project 2025</p>
+        
+    </div>
+</body>
+</html>
